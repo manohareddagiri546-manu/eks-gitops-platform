@@ -1,0 +1,40 @@
+name: Validate infrastructure and manifests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+
+      - name: Check Terraform formatting
+        run: terraform -chdir=terraform fmt -check -recursive
+
+      - name: Initialize Terraform
+        run: terraform -chdir=terraform init -backend=false
+
+      - name: Validate Terraform
+        run: terraform -chdir=terraform validate
+
+      - uses: azure/setup-helm@v4
+
+      - name: Validate Helm chart
+        run: helm lint helm/platform
+
+      - uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: "1"
