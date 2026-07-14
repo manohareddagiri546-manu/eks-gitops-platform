@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: { name: platform-demo, namespace: argocd }
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/YOUR_GITHUB_USERNAME/eks-gitops-platform.git
+    targetRevision: main
+    path: helm/platform
+  destination: { server: https://kubernetes.default.svc, namespace: platform-demo }
+  syncPolicy:
+    automated: { prune: true, selfHeal: true }
+    syncOptions: [CreateNamespace=true]
+    retry: { limit: 3 }

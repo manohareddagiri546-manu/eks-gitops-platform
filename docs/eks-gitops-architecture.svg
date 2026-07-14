@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise EKS GitOps Platform architecture</title>
+  <desc id="desc">A portfolio simulation showing GitHub Actions building and scanning an image, Amazon ECR storing it, Argo CD reconciling Git state, and a private EKS cluster running the workload.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06111f"/><stop offset="1" stop-color="#102a43"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#122d47"/><stop offset="1" stop-color="#0a1b2e"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#35d7ff"/></marker>
+    <style>
+      .eyebrow{font:700 18px ui-monospace,monospace;letter-spacing:3px;fill:#35d7ff}.title{font:800 48px Inter,Arial,sans-serif;fill:#f6f2e9}.sub{font:400 20px Inter,Arial,sans-serif;fill:#9fb0c3}.label{font:800 23px Inter,Arial,sans-serif;fill:#f6f2e9}.detail{font:400 16px Inter,Arial,sans-serif;fill:#9fb0c3}.tiny{font:700 13px ui-monospace,monospace;letter-spacing:1.5px;fill:#46e272}.flow{fill:none;stroke:#35d7ff;stroke-width:4;marker-end:url(#arrow)}.dash{fill:none;stroke:#46e272;stroke-width:3;stroke-dasharray:10 9;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 760 C320 640 510 890 820 748 S1310 650 1600 760V900H0Z" fill="#35d7ff" opacity=".035"/>
+  <text x="90" y="86" class="eyebrow">INDEPENDENT AWS PORTFOLIO SIMULATION</text>
+  <text x="90" y="150" class="title">Enterprise EKS GitOps Platform</text>
+  <text x="90" y="190" class="sub">Secure, repeatable Kubernetes delivery with OIDC, immutable artifacts, and automated drift correction</text>
+
+  <rect x="80" y="270" width="255" height="175" rx="18" fill="url(#card)" stroke="#35d7ff" stroke-opacity=".35"/>
+  <circle cx="125" cy="315" r="20" fill="#35d7ff" opacity=".18"/><path d="M116 315h18m-9-9v18" stroke="#35d7ff" stroke-width="3"/>
+  <text x="160" y="322" class="tiny">SOURCE</text><text x="112" y="372" class="label">Developer + Git</text><text x="112" y="407" class="detail">Pull request · Helm values</text>
+
+  <rect x="415" y="270" width="300" height="175" rx="18" fill="url(#card)" stroke="#35d7ff" stroke-opacity=".35"/>
+  <circle cx="460" cy="315" r="20" fill="#35d7ff" opacity=".18"/><path d="m450 316 7 7 14-17" fill="none" stroke="#35d7ff" stroke-width="3"/>
+  <text x="495" y="322" class="tiny">CONTINUOUS INTEGRATION</text><text x="447" y="372" class="label">GitHub Actions</text><text x="447" y="407" class="detail">Build · Test · Trivy scan · OIDC</text>
+
+  <rect x="795" y="270" width="255" height="175" rx="18" fill="url(#card)" stroke="#35d7ff" stroke-opacity=".35"/>
+  <circle cx="840" cy="315" r="20" fill="#35d7ff" opacity=".18"/><path d="M829 308h22v17h-22zM833 303h14" fill="none" stroke="#35d7ff" stroke-width="3"/>
+  <text x="875" y="322" class="tiny">ARTIFACT</text><text x="827" y="372" class="label">Amazon ECR</text><text x="827" y="407" class="detail">Versioned container images</text>
+
+  <rect x="1130" y="270" width="390" height="430" rx="22" fill="#071525" stroke="#35d7ff" stroke-width="2"/>
+  <text x="1172" y="320" class="tiny">PRIVATE AWS VPC · MULTI-AZ</text><text x="1172" y="365" class="label">Amazon EKS</text>
+  <rect x="1172" y="400" width="306" height="110" rx="14" fill="url(#card)" stroke="#35d7ff" stroke-opacity=".28"/><text x="1204" y="444" class="label">Managed node group</text><text x="1204" y="478" class="detail">Private subnets · autoscaling</text>
+  <rect x="1172" y="535" width="144" height="112" rx="14" fill="url(#card)" stroke="#46e272" stroke-opacity=".45"/><text x="1194" y="578" class="label">Pods</text><text x="1194" y="609" class="detail">Helm</text>
+  <rect x="1334" y="535" width="144" height="112" rx="14" fill="url(#card)" stroke="#46e272" stroke-opacity=".45"/><text x="1352" y="578" class="label">Service</text><text x="1352" y="609" class="detail">Ingress</text>
+
+  <rect x="415" y="555" width="300" height="145" rx="18" fill="url(#card)" stroke="#46e272" stroke-opacity=".55"/>
+  <text x="447" y="595" class="tiny">CONTINUOUS DELIVERY</text><text x="447" y="638" class="label">Argo CD</text><text x="447" y="670" class="detail">Pull · reconcile · self-heal</text>
+  <rect x="795" y="555" width="255" height="145" rx="18" fill="url(#card)" stroke="#46e272" stroke-opacity=".55"/>
+  <text x="827" y="595" class="tiny">DECLARED STATE</text><text x="827" y="638" class="label">Git manifests</text><text x="827" y="670" class="detail">Immutable image tag</text>
+
+  <path d="M335 356H415" class="flow"/><path d="M715 356H795" class="flow"/><path d="M1050 356H1130" class="flow"/>
+  <path d="M565 445V555" class="dash"/><path d="M795 628H715" class="dash"/><path d="M1050 628H1130" class="dash"/>
+  <rect x="80" y="758" width="1440" height="72" rx="15" fill="#071525" stroke="#35d7ff" stroke-opacity=".22"/>
+  <text x="112" y="802" class="tiny">OPERATIONS</text><text x="280" y="802" class="detail">CloudWatch logs</text><circle cx="442" cy="797" r="4" fill="#35d7ff"/><text x="472" y="802" class="detail">Prometheus metrics</text><circle cx="670" cy="797" r="4" fill="#35d7ff"/><text x="700" y="802" class="detail">KMS encryption</text><circle cx="862" cy="797" r="4" fill="#35d7ff"/><text x="892" y="802" class="detail">Private networking</text><text x="1320" y="802" class="tiny">PORTFOLIO LAB</text>
+</svg>

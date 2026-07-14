@@ -1,0 +1,4 @@
+aws_region        = "us-east-1"
+project_name      = "manohar-platform"
+environment       = "dev"
+github_repository = "YOUR_GITHUB_USERNAME/eks-gitops-platform"
