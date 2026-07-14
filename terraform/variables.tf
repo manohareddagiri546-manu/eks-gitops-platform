@@ -1,12 +1,29 @@
-variable "aws_region" { type = string
-  default = "us-east-1" }
-variable "project_name" { type = string
-  default = "portfolio-platform" }
-variable "environment" { type = string
-  default = "dev" }
-variable "kubernetes_version" { type = string
-  default = "1.31" }
-variable "node_instance_types" { type = list(string)
-  default = ["t3.medium"] }
-variable "github_repository" { type = string
-  description = "GitHub org/repository allowed to assume the deployment role" }
+variable "aws_region" {
+  type    = string
+  default = "us-east-1"
+}
+
+variable "project_name" {
+  type    = string
+  default = "portfolio-platform"
+}
+
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+
+variable "kubernetes_version" {
+  type    = string
+  default = "1.31"
+}
+
+variable "node_instance_types" {
+  type    = list(string)
+  default = ["t3.medium"]
+}
+
+variable "github_repository" {
+  type        = string
+  description = "GitHub org/repository allowed to assume the deployment role"
+}
